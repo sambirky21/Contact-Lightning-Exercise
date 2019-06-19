@@ -12,19 +12,17 @@ function contactFactory(contactData) {
     for (let i=0; i < contactData.length; i++) {
        ///add each array item to contact
        if (i === 0){
-        contact.name = contactData[i].name
+        contact.name = contactData[i]
        }
        else if (i === 1) {
-        contact.title = contactData[i].title
+        contact.title = contactData[i]
        }
        else if (i === 2) {
-        contact.email = contactData[i].email
+        contact.email = contactData[i]
        }
      }
     return contact
   }
-  let contactData = []
-// console.log(contactFactory(contactData))
 
 // 2. Complete the second function called `createContact`:
 // * createContact takes three arguments: name, title, email.
@@ -32,8 +30,8 @@ function contactFactory(contactData) {
 
 function createContact(name, title, email) {
   let newContact = [name, title, email]/// pass name, title, email to contactFactory as an array
-  for( i=0; i < newContact.length; i++){
-    contactFactory(newContact)
-  }
-  console.table(Contact)
+  let contact = contactFactory(newContact)
+  console.table(contact)
 }
+
+createContact("Sam", "Birky", "Email")
